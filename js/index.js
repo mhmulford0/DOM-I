@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br/> Is <br/> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -41,14 +41,20 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// const nav = Array.from(document.querySelectorAll("nav a"));
-// for (let i = 0; i < nav.length; i++) {
-//   nav.innerHTML = siteContent["nav"][`nav-item-${i}`]
-// }
+const nav = (document.querySelectorAll("nav a"));
+
+nav[0].innerHTML = siteContent["nav"]["nav-item-1"]
+nav[1].innerHTML = siteContent["nav"]["nav-item-2"]
+nav[2].innerHTML = siteContent["nav"]["nav-item-3"]
+nav[3].innerHTML = siteContent["nav"]["nav-item-4"]
+nav[4].innerHTML = siteContent["nav"]["nav-item-5"]
+nav[5].innerHTML = siteContent["nav"]["nav-item-6"]
+
+console.log(nav)
 
 
 const heading = document.querySelector("h1");
-heading.innerHTML = "DOM <br/> IS <br/> AWESOME"
+heading.innerHTML = siteContent["cta"]["h1"]
 
 const headImg = document.querySelector("#cta-img");
 headImg.src = siteContent["cta"]["img-src"];
@@ -81,3 +87,15 @@ textContentHead[4].innerHTML = siteContent["main-content"]["vision-h4"];
 textContentPara[4].innerHTML = siteContent["main-content"]["vision-content"];
 
 midImg.src = siteContent["main-content"]["middle-img-src"]
+
+const contact = document.querySelector('.contact h4');
+contact.innerHTML = siteContent["contact"]["contact-h4"]
+
+
+const contactContent = document.querySelectorAll('.contact p');
+contactContent[0].innerHTML = siteContent["contact"]["address"]
+contactContent[1].innerHTML = siteContent["contact"]["phone"]
+contactContent[2].innerHTML = siteContent["contact"]["email"]
+
+const footer = document.querySelector("footer p")
+footer.innerHTML = siteContent["footer"]["copyright"]
